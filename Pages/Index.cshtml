@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<p>Toggle the following line in Startup.cs to see the difference in behavior below.</p>
+<pre>options.Conventions.AddPageRoute("/Index", "page/{pageNum}");</pre>
+
+<p>PageNum = [@Model.PageNum]</p>
+
+<p>
+    Url.Page("/Index") = [@Url.Page("/Index")]
+</p>
+
+<section>
+    <h4>Routed Links</h4>
+    <a asp-page="/Index">Home (no page specified)</a> | 
+    <a asp-page="/Index" asp-route-pageNum="2">Page 2</a> | 
+    <a asp-page="/Index" asp-route-pageNum="3">Page 3</a> | 
+</section>
+
+<section>
+    <h4>Hardcoded Links</h4>
+    <a href="/">Home (no page specified)</a> |
+    <a href="/page/2">Page 2</a> |
+    <a href="/page/3">Page 3</a>
+</section>
+
